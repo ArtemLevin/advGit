@@ -6,4 +6,4 @@ def fib(number):
     else:
         return fib(number-1) + fib(number-2)
 
-print(fib(15))
+print(fib(150))
