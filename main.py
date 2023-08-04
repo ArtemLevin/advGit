@@ -1,4 +1,6 @@
 import functools
+import time
+start = time.time()
 @functools.lru_cache()
 def fib(number):
      if number == 1 or number == 2:
@@ -6,8 +8,11 @@ def fib(number):
      else:
          return fib(number-1) + fib(number-2)
 
-print(fib(50))
+print(fib(500))
+end = time.time()
+print(' Code exec time: ', (end - start)*10**3, 'ms')
 
+start = time.time()
 fibonacciCache = {}
 
 def fibonacci(nthNumber):
@@ -24,4 +29,7 @@ def fibonacci(nthNumber):
         fibonacciCache[nthNumber] = result
         return result
 
-print(fibonacci(50))
+print(fibonacci(500))
+
+end = time.time()
+print(' Code exec time: ', (end - start)*10**3, 'ms')
